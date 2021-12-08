@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Autoestima";
+}
+
+<body>
+    <hr class="featurette-divider">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="background-image:url(../../Content/img/autoestima.jpg)">
+        <div>
+            <h1 class="display-4 text-black">Test de Autoestima Infantil</h1>
+            <p class="lead text-black">Este test te ayuda a valorar la autoestima de los niños.</p>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <form>
+        <legend>Por favor, comenta que tan de acuerdo te encuentras con lo siguiente:</legend>
+        <legend>1. Cuando te levantas por la mañana y te miras al espejo, ¿qué es lo que dices?</legend>
+        <input type="radio" id="n1" name="p1" value="2" /> ¡Te veo muy bien esta mañana! Y estás a punto de tener un gran día.
+        <br /><br />
+        <input type="radio" id="n2" name="p1" value="1" /> ¡Oh, no, otra vez tú, no es posible! ¿Porqué te molestas en salir de la cama?.
+        <br /><br />
+        
+        <legend>2. Cuando fallas en algo o cometes un grave error, ¿qué es lo que te dices a ti mismo?</legend>
+        <input type="radio" id="n3" name="p2" value="2" /> Todo el mundo tiene derecho a fallar o cometer errores todos los días.
+        <br /><br />
+        <input type="radio" id="n4" name="p2" value="1" /> ¡Ya la organizaste otra vez! ¿Es que no puedes hacer nada bien? Parece como si no supieras.
+        <br /><br />
+        
+        <legend>3. Cuando tienes éxito en algo, ¿qué es lo que te dices a ti mismo?</legend>
+        <input type="radio" id="n5" name="p3" value="2" /> ¡Felicidades! ¡Debes sentirte orgulloso de ti mismo!
+        <br /><br />
+        <input type="radio" id="n6" name="p3" value="0" /> Podrías haberlo hecho mejor, si te hubieras esforzado lo suficiente.
+        <br /><br />
+        
+        <legend>4. Acabas de hablar con alguien que tiene autoridad sobre ti (como uno de tus padres, un entrenador, o un maestro), ¿qué es lo que te dices a ti mismo?</legend>
+        <input type="radio" id="n7" name="p4" value="2" /> Has llevado este asunto muy bien.
+        <br /><br />
+        <input type="radio" id="n8" name="p4" value="0" /> Estaría bien, pero no creo que cambiara nada esencial de mi vida.
+        <br /><br />
+        
+        <legend>5. Acabas de salir de la primera reunión del club en el que te inscribiste, ¿qué te dices a ti mismo?</legend>
+        <input type="radio" id="n9" name="p5" value="2" /> Estuvo divertido, conociste a algunas personas que te agradaron. Y hasta se rieron del chiste que contaste.
+        <br /><br />
+        <input type="radio" id="n10" name="p5" value="0" /> Hablaste demasiado y no le caíste bien a nadie. A todo el mundo le desagradó tu chiste.
+        <br /><br />
+        
+        <legend>6. Acabas de salir de la casa de un amigo, después de jugar juntos, ¿qué te dices a ti mismo?</legend>
+        <input type="radio" id="n11" name="p6" value="2" /> Fue muy divertido. ¡Realmente le caes bien a tu amigo!
+        <br /><br />
+        <input type="radio" id="n12" name="p6" value="0" /> Tu amigo solamente te hizo creer que le caías bien. Probablemente nunca te volverá a invitar.
+        <br /><br />
+        
+        <legend>7. Cuando alguien te dice un cumplido o dice «me caes bien», ¿qué es lo que te dices a ti mismo?</legend>
+        <input type="radio" id="n13" name="p7" value="2" /> ¡Te lo mereces!
+        <br /><br />
+        <input type="radio" id="n14" name="p7" value="0" /> Nadie te dice un cumplido a menos que quieran algo de ti. Además no te lo mereces.
+        <br /><br />
+        
+        <legend>8. Cuando alguien a quien estimas te falla, ¿qué te dices a ti mismo?</legend>
+        <input type="radio" id="n15" name="p8" value="2" /> Han herido tus sentimientos, pero te repondrás. Después puedes tratar de averiguar qué fue lo que pasó.
+        <br /><br />
+        <input type="radio" id="n16" name="p8" value="0" /> Esto prueba que no le caes bien a esa persona.
+        <br /><br />
+        
+        <legend>9. Cuando le fallas a una persona que estimas, ¿qué es lo que te dices a ti mismo?</legend>
+        <input type="radio" id="n17" name="p9" value="2" /> No es bueno, y no es gracioso, pero algunas veces las personas llegan a fallar. Reconoce lo que hiciste y sigue adelante con tu vida.
+        <br /><br />
+        <input type="radio" id="n18" name="p9" value="0" /> ¿Cómo pudiste hacer algo tan terrible? Deberías sentirte avergonzado de ti mismo.
+        <br /><br />
+        
+        <legend>10. Cuando te sientes necesitado o inseguro de ti, ¿qué te dices a ti mismo?</legend>
+        <input type="radio" id="n19" name="p10" value="2" /> Todos se sienten así algunas veces. Pide un abrazo a tu madre o acuéstate abrazado a tu almohada, y pronto te sentirás bien.
+        <br /><br />
+        <input type="radio" id="n20" name="p10" value="0" /> ¡Madura! No seas tan infantil. ¡Eso es muy desagradable!
+        <br /><br />
+        
+      
+        <button class="btn btn-outline-secondary">Resultado</button>
+        <button class="btn btn-outline-secondary">@Html.ActionLink("Otro Test", "Index")</button>
+        <hr class="featurette-divider">
+
+    </form>
+    <script>
+            // buscar el <form> y guardarlo en una variable
+        const form = document.querySelector('form');
+
+            // decir que en el evento enviar se sume el total
+        form.addEventListener('submit', obtenerTotal);
+
+        function obtenerTotal(event) {
+            // evitar enviar el formulario que ocasiona que se refresque la pagina
+            event.preventDefault();
+
+            // obtener todos los input radio
+            const formData = new FormData(event.target);
+
+            // convertir los valores a String, o colocar un 0 si no elegieron algo
+            const p1 = parseInt(formData.get('p1') || '0', 10);
+            const p2 = parseInt(formData.get('p2') || '0', 10);
+            const p3 = parseInt(formData.get('p3') || '0', 10);
+            const p4 = parseInt(formData.get('p4') || '0', 10);
+            const p5 = parseInt(formData.get('p5') || '0', 10);
+            const p6 = parseInt(formData.get('p6') || '0', 10);
+            const p7 = parseInt(formData.get('p7') || '0', 10);
+            const p8 = parseInt(formData.get('p8') || '0', 10);
+            const p9 = parseInt(formData.get('p9') || '0', 10);
+            const p10 = parseInt(formData.get('p10') || '0', 10);
+
+
+            const result = p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10;
+
+            if (result > 16) {
+                alert("Tu nivel de autoestima es ALTO");
+            }
+            else if (result > 10) {
+                alert("Tu nivel de autoestima es BAJO");
+            }
+            else {
+                alert("Tu autoestima está hecha POLVO.");
+            }
+
+        }
+
+    </script>
+
+</body>
+
+
